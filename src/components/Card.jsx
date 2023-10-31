@@ -8,7 +8,7 @@ import React from "react";
  * @returns 
  */
 const Card = (props) => {
-  return <div className=" h-[178px] p-3 m-10 w-64 border border-solid border-black rounded-lg shadow-md">
+  return <div className="h-[178px] overflow-scroll p-3 m-10 w-64 border border-solid border-black rounded-lg shadow-lg">
 		<h2 className=" text-xs font-bold lg:text-lg">{props.title}</h2>
 		<p className="text-xs">{props.content}</p>
 	</div>;
