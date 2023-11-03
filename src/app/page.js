@@ -3,6 +3,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 import Card from "@/components/Card";
+import Navbar from "@/components/Navbar";
 
 /**
  * Home(Landing) page
@@ -36,10 +37,11 @@ export default function Home() {
   const { userId } = auth();
 
   if (userId) {
-    redirect(`/chat/${userId}`);
+    redirect(`/chat`);
   }
   return (
     <>
+    <Navbar />
       {/**hero section */}
       <section className="flex border-2 justify-center border-white lg:p-10">
         <div className="px-5">
@@ -47,7 +49,7 @@ export default function Home() {
             <div className="flex align-center">
               <p className="text-sm pe-1">Chat Beyond Limits:</p>
               <Image
-                src="assets/icons/arrow.svg"
+                src="/assets/icons/arrow.svg"
                 alt="arrow"
                 width={20}
                 height={20}
