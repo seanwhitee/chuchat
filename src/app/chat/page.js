@@ -1,15 +1,43 @@
 import React from "react";
-import Sidebar from "@/components/Sidebar";
+import Card from "@/components/Card";
 
-const page = () => {
+
+const cardData = [
+  {
+    title: "Instant Messaging Excellence",
+    content:
+      `Experience lightning-fast and reliable instant messaging with ChuChat. 
+      Send messages instantly, keeping your conversations smooth and real-time. 
+      `,
+  },
+  {
+    title: "Intelligent Chatbots at Your Service",
+    content: `
+    Meet our intelligent chatbots, designed to enhance your chat experience. From answering queries to providing
+    personalized recommendations, our smart chatbots are here to assist you 24/7.
+    `
+  },
+  {
+    title: "User-Friendly Interface, Ultimate Convenience",
+    content: `
+    ChuChat's intuitive and user-friendly interface ensures that everyone can navigate with ease. 
+    Enjoy ultimate convenience with organized chat rooms, easy-to-use tools. 
+    Your chat experience just got simpler and more enjoyable.
+    `
+  },
+];
+export default function Page() {
+  
   return (
-    <div className="mx-auto flex flex-col w-10/12 bg-gray-50 items-center justify-center">
-    
-      <div>chathomepage</div>
-      <div>hello</div>
-    
+    <div className="mx-auto flex flex-col bg-gray-200 items-center justify-center">
+      <h2 className=" lg:text-5xl md:text-3xl sm:text-xl font-bold ">Hello</h2>
+      <div className="lg:flex md:flex items-center justify-center">
+        {cardData.map((data) => {
+          return (
+            <Card key={data.title} title={data.title} content={data.content} />
+          );
+        })}
+      </div>
     </div>
   );
 };
-
-export default page;

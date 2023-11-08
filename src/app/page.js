@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </section>
       {/**Card */}
-      <section className="lg:flex md:flex items-center justify-center">
+      <section className="lg:flex md:flex items-center justify-center pb-2">
         {
           cardData.map((data)=>{
             return (

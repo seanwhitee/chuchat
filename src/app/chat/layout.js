@@ -3,8 +3,7 @@ import Link from "next/link";
 
 export default function ChatLayout({ children }) {
   return (
-    <div className="h-full flex-col">
-			
+    <div className=" h-screen flex-col">
       <div className="bg-purple-400 py-3 text-center">
         <Link href={"/"}>
           <h1 className=" text-white text-3xl font-bold">
@@ -12,11 +11,11 @@ export default function ChatLayout({ children }) {
           </h1>
         </Link>
       </div>
-			<div className="flex h-full">
-      <Sidebar />
-			
-			{children}
-			</div>
+      <div className="flex h-screen bg-gray-200">
+        
+
+        {children}
+      </div>
     </div>
   );
 }
