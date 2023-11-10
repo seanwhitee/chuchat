@@ -12,7 +12,7 @@ const NewChat = (props) => {
   return (
     <div
       
-      className={`w-full flex items-center justify-center hover:bg-purple-500 rounded-md py-2`}
+      className="w-full flex items-center justify-center bg-gray-700 hover:bg-purple-500 rounded-md py-2"
     >
       <Image
         src={"/assets/icons/message.svg"}

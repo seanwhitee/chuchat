@@ -11,10 +11,14 @@
   "dependencies": {
     "@clerk/nextjs": "^4.25.7",
     "@clerk/themes": "^1.7.9",
+    "mongodb": "6.2",
+    "mongoose": "^8.0.0",
     "next": "^14.0.1",
     "openai": "^4.16.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "validator": "^13.11.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "autoprefixer": "^10",

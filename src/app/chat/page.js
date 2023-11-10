@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "@/components/Card";
+import Sidebar from "@/components/Sidebar";
 
 
 const cardData = [
@@ -29,8 +30,9 @@ const cardData = [
 export default function Page() {
   
   return (
-    <div className="mx-auto flex flex-col bg-gray-200 items-center justify-center">
-      <h2 className=" lg:text-5xl md:text-3xl sm:text-xl font-bold ">Hello</h2>
+    <>
+    <div className="mx-auto flex flex-col bg-black items-center justify-center">
+      <h2 className=" lg:text-5xl md:text-3xl sm:text-3xl font-bold text-white">Hello</h2>
       <div className="lg:flex md:flex items-center justify-center">
         {cardData.map((data) => {
           return (
@@ -38,6 +40,10 @@ export default function Page() {
           );
         })}
       </div>
+      
     </div>
+    {/**Sidebar for selected chatrooms */}
+    <Sidebar />
+    </>
   );
 };

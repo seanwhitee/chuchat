@@ -30,7 +30,7 @@ const UserInputArea = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-2 shadow-lg w-4/5">
+    <div className="bg-gray-700 rounded-lg p-2 shadow-lg w-3/5">
       <form action="" className="flex items-center px-2">
         {/**dynamically update the textarea height based on the user input */}
         <textarea
@@ -40,7 +40,7 @@ const UserInputArea = () => {
           onChange={handleInputChange}
           rows={rows}
           placeholder="send message"
-          className="border-none outline-none resize-none bg-purple-white py-2 px-1 rounded-md w-full text-black me-3"
+          className="border-none outline-none resize-none bg-purple-white bg-gray-700 py-2 px-1 rounded-md w-full text-white me-3"
         ></textarea>
         <div className="">
           <button type="submit" className=" bg-green-200 rounded-md p-1">
