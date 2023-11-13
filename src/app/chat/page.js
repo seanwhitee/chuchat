@@ -32,8 +32,8 @@ export default function Page() {
   return (
     <>
     <div className="mx-auto flex flex-col bg-black items-center justify-center">
-      <h2 className=" lg:text-5xl md:text-3xl sm:text-3xl font-bold text-white">Hello</h2>
-      <div className="lg:flex md:flex items-center justify-center">
+      
+      <div className="bg-black lg:flex">
         {cardData.map((data) => {
           return (
             <Card key={data.title} title={data.title} content={data.content} />

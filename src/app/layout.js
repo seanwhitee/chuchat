@@ -1,7 +1,12 @@
 import { Inter } from "next/font/google";
+import SessionProvider from "@/components/SessionProvider";
+import { getServerSession } from "next-auth";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import Navbar from "@/components/Navbar";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Login from "@/components/Login";
+import ClientProvider from "@/components/ClientProvider";
+
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,17 +17,27 @@ export const metadata = {
     "A chat application that integrates three chatbot api to provide a better solution for user reference.",
 };
 
-export default function RootLayout({ children }) {
+
+
+export default async function RootLayout({ children }) {
+  const session = await getServerSession(authOptions);
+  
   return (
-    <ClerkProvider>
+    <SessionProvider session={session}>
       <html lang="en">
         <body className={`${inter.className}`} >
-          <main className="mx-auto min-w-max">
-            
-            {children}
-          </main>
+          {!session?(
+            <Login />
+          ):(
+              <main className="mx-auto min-w-max bg-black h-screen">
+                <ClientProvider />
+                {children}
+              </main>
+          )}
+      
+          
         </body>
       </html>
-    </ClerkProvider>
+    </SessionProvider>
   );
 }
