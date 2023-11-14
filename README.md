@@ -5,6 +5,8 @@ A chat application that integrates three chatbot api to provide a better solutio
 ## Tech Stack
 
 - [next.js/react](https://nextjs.org/)
+- Authentication: Next Oauth
+- Database: Firestore Database
 
 ## Usage
 
@@ -14,17 +16,23 @@ A chat application that integrates three chatbot api to provide a better solutio
     npm i
     ```
 
-2. Create a .env.local file. Insind it, paste your clerk secrets key and other configuration in it. You can follow the doc on [their website](https://clerk.com/).
+2.
+    - Create a .env.local file. Insind it, paste your google cloud oauth api secrets, openai api key
+
+    - next oauth url is 'http://localhost:3000' for local development mode. If you deploy to cloud, change to your own domain name.
 
     .env.local
 
     ```bash
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-    CLERK_SECRET_KEY=
-    NEXT_PUBLIC_CLERK_SIGN_IN_URL=
-    NEXT_PUBLIC_CLERK_SIGN_UP_URL=
-    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
-    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+    GOOGLE_ID=
+    GOOGLE_SECRET=
+
+    OPENAI_API_KEY=
+
+    NEXTAUTH_URL=
+    NEXTAUTH_SECRET=
+
+    FIREBASE_SERVICE_ACCOUNT_KEY=
     ```
 
 3. Run the development server
