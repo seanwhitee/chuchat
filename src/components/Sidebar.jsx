@@ -17,7 +17,7 @@ const Sidebar = () => {
   const [isClosed, setIsClosed] = useState(false);
   const [chats, loading, error] = useCollection(
     session && query(
-      collection(db, "users", session.user.email, "chats"),
+      collection(db, "users", session?.user?.email, "chats"),
       orderBy('createAt', 'asc'))
   );
   const handleClicked = () => {
