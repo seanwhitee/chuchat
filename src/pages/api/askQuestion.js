@@ -22,7 +22,7 @@ const handler = async(req, res) => {
     text: response || 'Chatgpt cannot find the answer for that!',
     createAt: admin.firestore.Timestamp.now(),
     user: {
-      _id: 'ChatGpt',
+      _id: 'assistant',
       name: 'ChatGpt',
       avatar: '/assets/images/icons8-chatgpt.svg'
     }

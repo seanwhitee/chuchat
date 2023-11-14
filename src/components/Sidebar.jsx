@@ -1,7 +1,8 @@
 "use client";
+import OptionMenu from "./OptionMenu";
 
 import React, { useState } from "react";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import Image from "next/image";
 import { NewChatCreateButton } from "./NewChatCreateButton";
@@ -15,10 +16,11 @@ const Sidebar = () => {
   const { data: session } = useSession();
 
   const [isClosed, setIsClosed] = useState(false);
+  const [isMenuOpened, setIsMenuOpened] = useState(false)
   const [chats, loading, error] = useCollection(
     session && query(
       collection(db, "users", session?.user?.email, "chats"),
-      orderBy('createAt', 'asc'))
+      orderBy('createAt', 'desc'))
   );
   const handleClicked = () => {
     setIsClosed(!isClosed);
@@ -65,7 +67,9 @@ const Sidebar = () => {
         {session && (
           <>
             <Image
-              onClick={() => signOut()}
+              onClick={()=>{
+                setIsMenuOpened(!isMenuOpened)
+              }}
               src={session.user.image}
               alt="user image"
               width={45}
@@ -74,6 +78,12 @@ const Sidebar = () => {
             />
             <p className="ms-2">{session.user.name}</p>
           </>
+        )}
+      </div>
+
+      <div>
+        {isMenuOpened && (
+          <OptionMenu />
         )}
       </div>
     </div>

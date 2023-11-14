@@ -4,7 +4,7 @@ const openAiQuery = async(prompt, chatId, model) => {
     
     const res = await openai.chat.completions.create(
         {
-            prompt,
+            messages: [{ role: "user", content: prompt }],
             model,
             temperature: 0.9,
             top_p: 0.1,
@@ -14,7 +14,7 @@ const openAiQuery = async(prompt, chatId, model) => {
 
         }
     ).then((res)=>{
-        return res.data.choices[0].text
+        return res['choices'][0]['message']['content']
     }).catch((err)=> {
         return `Chatgpt is unable to find the answer for that. Error(${err.message})`
     })

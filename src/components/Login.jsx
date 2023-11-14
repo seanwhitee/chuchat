@@ -10,7 +10,7 @@ const Login = () => {
       </h1>
       <button
         onClick={() => signIn("google")}
-        className="text-white font-bold lg:text-3xl text-lg animate-pulse border-1 rounded-lg bg-purple-500/50 hover:bg-purple-300/50 px-3 py-2 mt-5"
+        className="text-white font-semibold lg:text-3xl text-lg animate-pulse border-1 rounded-md bg-purple-500/50 hover:bg-purple-300/50 px-3 py-2 mt-5"
       >
         Sign in to use ChuChat
       </button>

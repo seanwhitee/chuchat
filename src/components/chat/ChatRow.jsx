@@ -26,7 +26,6 @@ const ChatRow = ({ id }) => {
       orderBy('createAt', 'asc')
 
   );
-  
   useEffect(()=>{
     if(!pathName) return;
     setActive(pathName.includes(id))
