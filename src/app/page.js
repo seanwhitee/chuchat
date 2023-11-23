@@ -11,7 +11,6 @@ import Sidebar from "@/components/Sidebar";
 
 /**
  * Home(Landing) page
- * @returns
  */
 const cardData = [
   {

@@ -50,7 +50,7 @@ const UserInputArea = ({ chatId }) => {
       // Toast notification
       const notification = toast.loading("ChuChat is thinking...");
 
-      await fetch("/api/askQuestion", {
+      await fetch("/api/askGptQuestion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,6 @@ const UserInputArea = ({ chatId }) => {
           prompt: input,
           chatId,
           model,
-          session,
         }),
       }).then(() => {
         // Toast notification to say successful

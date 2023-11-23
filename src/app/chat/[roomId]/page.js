@@ -8,7 +8,7 @@ const Page = ({ params }) => {
   return (
     <div className="flex flex-col h-full bg-black">
       <div className=" flex h-full items-center">
-        <div className="flex flex-col w-full justify-between h-screen">
+        <div className="flex pb-16 flex-col w-full justify-between h-screen">
           <Chat chatId={params.roomId} />
 
           {/**user promting */}
