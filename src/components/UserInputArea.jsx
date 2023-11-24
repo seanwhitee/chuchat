@@ -12,8 +12,7 @@ const UserInputArea = ({ chatId }) => {
   const { data: session } = useSession();
   const [prompt, setPrompt] = useState("");
 
-  // ** specify the gpt model I use.
-  const model = "gpt-3.5-turbo";
+
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -48,7 +47,9 @@ const UserInputArea = ({ chatId }) => {
       );
 
       // Toast notification
-      const notification = toast.loading("ChuChat is thinking...");
+
+      // calling openai api
+      const gptNotification = toast.loading("GPT is thinking...");
 
       await fetch("/api/askGptQuestion", {
         method: "POST",
@@ -58,18 +59,40 @@ const UserInputArea = ({ chatId }) => {
         body: JSON.stringify({
           prompt: input,
           chatId,
-          model,
+          model: "gpt-3.5-turbo",
         }),
       }).then(() => {
         // Toast notification to say successful
-        toast.success("ChuChat has responded!", {
-          id: notification,
+        toast.success("GPT has responded!", {
+          id: gptNotification,
+        });
+      });
+
+      // calling google vertexAI api
+      const vertexAiNotification = toast.loading("Bard is thinking...");
+
+      await fetch("/api/askBardQuestion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: input,
+          chatId,
+          model: "chat-bison@001",
+        }),
+      }).then(() => {
+        // Toast notification to say successful
+        toast.success("Bard has responded!", {
+          id: vertexAiNotification,
         });
       });
     } catch (err) {
       console.log(err);
     }
   };
+
+  
   return (
     <div className="bg-gray-800 rounded-lg p-2 shadow-lg w-3/5">
       <form action="" className="flex items-center px-2" onSubmit={sendMessage}>

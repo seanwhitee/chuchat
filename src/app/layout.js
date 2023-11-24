@@ -20,7 +20,7 @@ export default async function RootLayout({ children }) {
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body className={`${inter.className}`}>
+        <body className={`${inter.className} bg-black`}>
           <main className="mx-auto min-w-max bg-black h-screen">
             <ClientProvider />
             {children}
