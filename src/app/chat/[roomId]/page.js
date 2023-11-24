@@ -4,7 +4,14 @@ import ChatMessage from "@/components/chat/ChatMessage";
 import Sidebar from "@/components/Sidebar";
 import Chat from "@/components/chat/chat";
 
-const Page = ({ params }) => {
+import { getServerSession, authOptions } from "next-auth";
+import { redirect } from "next/navigation";
+
+const Page = async ({ params }) => {
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect('/')
+  }
   return (
     <div className="flex flex-col h-full bg-black">
       <div className=" flex h-full items-center">
