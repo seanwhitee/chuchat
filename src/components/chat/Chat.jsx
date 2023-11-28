@@ -17,7 +17,7 @@ const Chat = ({ chatId }) => {
 
   return (
     <div
-      className="mx-auto break-words h-full overflow-scroll flex flex-col lg:w-[60rem] md:w-[25rem] w-[25rem]
+      className="mx-auto break-words h-full overflow-scroll flex flex-col lg:w-[50rem] md:w-[25rem] w-[25rem]
           bg-white px-3 items-center justify-start py-5"
     >
       {messages?.docs.map((mess) => {

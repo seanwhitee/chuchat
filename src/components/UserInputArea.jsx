@@ -12,8 +12,6 @@ const UserInputArea = ({ chatId }) => {
   const { data: session } = useSession();
   const [prompt, setPrompt] = useState("");
 
-
-
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!prompt) return;
@@ -45,8 +43,6 @@ const UserInputArea = ({ chatId }) => {
 
         message
       );
-
-      // Toast notification
 
       // calling openai api
       const gptNotification = toast.loading("GPT is thinking...");
@@ -87,14 +83,36 @@ const UserInputArea = ({ chatId }) => {
           id: vertexAiNotification,
         });
       });
+
+
+      // // calling unformal bing chat api
+      // const bingChatNotification = toast.loading("Bing is thinking...");
+
+      // await fetch("/api/askBingQuestion", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     prompt: input,
+      //     chatId,
+      //     model: "",
+      //   }),
+      // }).then(() => {
+      //   // Toast notification to say successful
+      //   toast.success("Bing has responded!", {
+      //     id: bingChatNotification,
+      //   });
+      // });
+
+      // [end of all api calling]
     } catch (err) {
       console.log(err);
     }
   };
 
-  
   return (
-    <div className="bg-gray-800 rounded-lg p-2 shadow-lg w-3/5">
+    <div className="bg-white border-[1px] border-black/50 rounded-xl p-2 shadow-lg w-3/6">
       <form action="" className="flex items-center px-2" onSubmit={sendMessage}>
         {/**dynamically update the textarea height based on the user input */}
         <textarea
@@ -106,7 +124,7 @@ const UserInputArea = ({ chatId }) => {
           value={prompt}
           disabled={!session}
           rows={1}
-          placeholder="send message"
+          placeholder="Message ChuChat..."
           className="border-none outline-none resize-none bg-purple-white bg-gray-800
             disabled:cursor-not-allowed bg-transparent disabled:text-gray-300 py-2 px-1 rounded-md w-full text-white me-3"
         ></textarea>
