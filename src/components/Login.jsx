@@ -1,19 +1,29 @@
 "use client";
 import React from "react";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 
 const Login = () => {
   return (
-    <div className="bg-black h-screen flex flex-col items-center justify-center">
-      <h1 className=" text-white lg:text-9xl text-6xl font-bold">
+    <div className="bg-white h-screen flex flex-col items-center justify-center">
+      <h1 className=" text-black lg:text-6xl text-6xl font-bold">
         <span className=" text-purple-500">Chu</span>Chat
       </h1>
+      
       <button
         onClick={() => signIn("google")}
-        className="text-white font-semibold lg:text-3xl text-lg animate-pulse border-1 rounded-md bg-purple-500/50 hover:bg-purple-300/50 px-3 py-2 mt-5"
+        className="my-5 text-white font-semibold text-md border-1 rounded-md bg-purple-500 hover:bg-purple-500/50 px-3 py-2"
       >
-        Sign in to use ChuChat
+        Getting start
       </button>
+      <div className="shadow-xl overflow-hidden lg:flex md:flex hidden">
+        <Image
+          src={"/assets/images/demo1.png"}
+          width={700}
+          height={700}
+          alt="demo-img1"
+        ></Image>
+      </div>
     </div>
   );
 };

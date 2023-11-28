@@ -11,7 +11,7 @@ const ChatMessage = ({ message }) => {
     message?.user.name === "Bing" ? (
     // The bot output
     <div className="flex py-6 w-full px-3">
-      <div className="flex justify-center items-start w-1/12">
+      <div className="me-2 flex justify-center items-start w-1/12">
         <Image
           src={message.user.avatar}
           alt="user-avatar"
@@ -20,9 +20,9 @@ const ChatMessage = ({ message }) => {
         ></Image>
       </div>
 
-      <div className="border-2 rounded-lg border-white/50 p-5 shadow-2xl w-10/12 text-sm md:text-md lg:text-lg font-light text-black">
+      <div className="border-2 rounded-lg border-white/50 p-5 shadow-2xl w-10/12 font-light text-black">
         <Markdown
-          className="flex flex-col overflow-scroll"
+          className="flex flex-col overflow-scroll text-sm"
           remarkPlugins={[remarkGfm]}
         >
           {message.text}
@@ -32,7 +32,7 @@ const ChatMessage = ({ message }) => {
   ) : (
     // The user output
     <div className="flex py-6 w-full text-white px-3">
-      <div className="flex justify-center items-start w-1/12">
+      <div className=" me-2 flex justify-center items-start w-1/12">
         <Image
           
           src={message.user.avatar}
@@ -42,8 +42,8 @@ const ChatMessage = ({ message }) => {
         ></Image>
       </div>
 
-      <div className="border-2 rounded-lg border-white/50 p-5 shadow-2xl w-10/12 text-sm md:text-md lg:text-lg font-light text-black">
-        <Markdown className="flex flex-col overflow-scroll" remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
+      <div className=" border-2 rounded-lg border-white/50 p-5 shadow-2xl w-10/12 font-light text-black">
+        <Markdown className="flex text-sm flex-col overflow-scroll" remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
       </div>
     </div>
   );
