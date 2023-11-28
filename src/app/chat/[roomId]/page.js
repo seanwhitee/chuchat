@@ -13,9 +13,9 @@ const Page = async ({ params }) => {
     redirect('/')
   }
   return (
-    <div className="flex flex-col h-full bg-black">
+    <div className="flex flex-col h-full bg-white">
       <div className=" flex h-full items-center">
-        <div className="flex pb-16 flex-col w-full justify-between h-screen">
+        <div className="flex pb-24 flex-col w-full justify-between h-screen">
           <Chat chatId={params.roomId} />
 
           {/**user promting */}

@@ -43,10 +43,10 @@ export default async function Home() {
       {!session && <Login />}
       {session && (
         <>
-          <div className="flex flex-col h-full bg-black">
+          <div className="flex flex-col h-full bg-white">
             <div className="flex h-full items-center">
-              <div className="mx-auto flex flex-col bg-black items-center justify-center">
-                <div className="bg-black lg:flex">
+              <div className="mx-auto flex flex-col items-center justify-center">
+                <div className="bg-white lg:flex">
                   {cardData.map((data) => {
                     return (
                       <Card

@@ -15,11 +15,10 @@ const Chat = ({ chatId }) => {
       orderBy('createAt', 'asc'))
   );
 
-
   return (
     <div
       className="mx-auto break-words h-full overflow-scroll flex flex-col lg:w-[60rem] md:w-[25rem] w-[20rem]
-			bg-black px-3 items-center justify-start py-5"
+          bg-white px-3 items-center justify-start py-5"
     >
       {messages?.docs.map((mess) => {
         return <ChatMessage key={mess.id} message={mess.data()} />;

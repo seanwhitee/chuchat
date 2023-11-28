@@ -37,25 +37,27 @@ const ChatRow = ({ id }) => {
   }
   return (
     <Link href={`/chat/${id}`}>
-      <div className={` w-full flex items-center justify-between px-2 my-1 bg-gray-700 hover:bg-purple-500 rounded-md py-2
-      ${active && ' bg-purple-500/50  animate-pulse delay-1000'}`}>
+      <div className={` w-full flex items-center justify-between px-2 my-1 bg-gray-600 hover:bg-purple-500 rounded-md py-2
+      ${active && ' bg-purple-500/80 animate-pulse'}`}>
         <Image
           src={"/assets/icons/message.svg"}
           alt="message"
           width={25}
           height={25}
         ></Image>
-        <h3 className=" me-20 ms-2 overflow-hidden h-[25px]">
+        <h3 className=" ms-1 me-10 w-3/5 overflow-hidden h-[25px]">
           {messages?.docs[0]?.data()?.text || "New Chat"}
         </h3>
-        <Image
-          src={"/assets/icons/trash.svg"}
-          alt="trash-icon"
-          width={25}
-          height={25}
-          className=" hover:bg-purple-400 rounded-md"
-          onClick={removeChat}
-        ></Image>
+        <div className=" hover:bg-purple-400 p-1 rounded-md">
+          <Image
+            src={"/assets/icons/trash.svg"}
+            alt="trash-icon"
+            width={25}
+            height={25}
+            
+            onClick={removeChat}
+          ></Image>
+        </div>
       </div>
     </Link>
   );

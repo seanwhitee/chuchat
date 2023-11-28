@@ -40,12 +40,12 @@ const Sidebar = () => {
       </button>
     </>
   ) : (
-    <div className=" px-3 w-64 rounded-lg bg-gray-900 p-1 text-white flex flex-col h-full justify-between fixed top-0 shadow-lg">
+    <div className=" px-3 w-64 bg-black p-1 text-white flex flex-col h-full justify-between fixed top-0 shadow-lg">
       <div className="flex">
         <NewChatCreateButton />
         <button
           onClick={handleClicked}
-          className=" p-2 m-1 rounded-md hover:bg-purple-500 bg-gray-700"
+          className=" p-2 m-1 rounded-md hover:bg-purple-500 bg-gray-600"
         >
           <Image
             src="/assets/icons/arrow-left.svg"
@@ -63,21 +63,23 @@ const Sidebar = () => {
           return <ChatRow key={chat.id} id={chat.id}/>
         })}
       </div>
-      <div className="flex p-2 items-center justify-start pt-16 border-t-2 border-gray-600">
+      <div className="flex pb-2 items-center justify-start pt-16">
         {session && (
-          <>
+          <button
+          onClick={()=>{
+            setIsMenuOpened(!isMenuOpened)
+          }}
+          className="hover:bg-gray-600 flex items-center py-1 w-56 px-2 rounded-lg">
             <Image
-              onClick={()=>{
-                setIsMenuOpened(!isMenuOpened)
-              }}
+              
               src={session.user.image}
               alt="user image"
               width={45}
               height={45}
-              className="rounded-full border-2 hover:border-purple-500 "
+              className="rounded-full border-2"
             />
-            <p className="ms-2">{session.user.name}</p>
-          </>
+            <p className="ms-2 font-bold">{session.user.name}</p>
+          </button>
         )}
       </div>
 
