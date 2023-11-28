@@ -30,7 +30,7 @@ const Login = () => {
               width={550}
               height={550}
               alt="demo-img1"
-              className="rounded-md shadow-xl"
+              className="shadow-xl"
             ></Image>
           </div>
         </Tilt>
