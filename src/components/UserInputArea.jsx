@@ -83,7 +83,7 @@ const UserInputArea = ({ chatId }) => {
           id: vertexAiNotification,
         });
       });
-
+      // // Still in testing.
       // // calling unformal bing chat api
       // const bingChatNotification = toast.loading("Bing is thinking...");
 

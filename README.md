@@ -1,11 +1,20 @@
 # Chu Chat
 
-A chat application that integrates three chatbot api to provide a better solution for user reference.
+A chat application that integrates 
+
+- Google Cloud Vertex AI API
+- Open AI API
+
+to provide a better solution for user reference.
+
+## Demo
+
+![demo1-img](./public/assets/images/demo1.png)
 
 ## Tech Stack
 
 - [next.js/react](https://nextjs.org/)
-- Authentication: Next Oauth
+- Authentication: Next Auth and Google Authentication
 - Database: Firestore Database
 
 ## Usage
@@ -21,6 +30,10 @@ A chat application that integrates three chatbot api to provide a better solutio
 
     - next oauth url is 'http://localhost:3000' for local development mode. If you deploy to cloud, change to your own domain name.
 
+    - GCP project ID is for calling vertex ai api.
+
+    - Firebase service account key is for accessing the firebase from client side library.
+
     .env.local
 
     ```bash
@@ -32,6 +45,8 @@ A chat application that integrates three chatbot api to provide a better solutio
     NEXTAUTH_URL=
     NEXTAUTH_SECRET=
 
+    GCP_PROJECT_ID=
+    
     FIREBASE_SERVICE_ACCOUNT_KEY=
     ```
 
