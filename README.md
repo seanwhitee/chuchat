@@ -26,7 +26,7 @@ to provide a better solution for user reference.
     ```
 
 2.
-    - Create a .env.local file. Insind it, paste your google cloud oauth api secrets, openai api key
+    - Create a .env.local file. Insind it, paste your google cloud oauth api secrets, openai api key and other secrets you needed. I list some secrets I used for this project as an example.
 
     - next oauth url is 'http://localhost:3000' for local development mode. If you deploy to cloud, change to your own domain name.
 
