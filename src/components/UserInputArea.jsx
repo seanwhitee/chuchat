@@ -111,7 +111,7 @@ const UserInputArea = ({ chatId }) => {
   };
 
   return (
-    <div className="bg-white border-[1px] border-black/50 rounded-xl p-2 shadow-lg w-4/6">
+    <div className="bg-white border-[1px] border-black/50 rounded-xl p-2 shadow-lg w-7/12">
       <form action="" className="flex items-center px-2" onSubmit={sendMessage}>
         {/**dynamically update the textarea height based on the user input */}
         <textarea
