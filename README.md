@@ -19,14 +19,14 @@ to provide a better solution for user reference.
 
 ## Usage
 
-1. Install all dependency
+1. After clone the project, install all dependency.
 
     ```bash
     npm i
     ```
 
 2.
-    - Create a .env.local file. Insind it, paste your google cloud oauth api secrets, openai api key and other secrets you needed. I list some secrets I used for this project as an example.
+    Create a .env.local file. Insind it, paste your google cloud oauth api secrets, openai api key or other secrets you needed. I list some secrets I used for this project as an example.
 
     - next oauth url is 'http://localhost:3000' for local development mode. If you deploy to cloud, change to your own domain name.
 
