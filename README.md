@@ -1,6 +1,9 @@
 # Chu Chat
 
-A chat application that integrates 
+![Static Badge](https://img.shields.io/badge/nextjs-react-blue) ![Static Badge](https://img.shields.io/badge/Openai-gpt_%203.5%20_turbo-green)
+ ![Static Badge](https://img.shields.io/badge/Google-vertexAI-red)
+
+A chat application that integrates
 
 - Google Cloud Vertex AI API
 - Open AI API
@@ -57,3 +60,7 @@ to provide a better solution for user reference.
     ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🧐 Feature
+
+In the future, we could integrate the bing chat feature into the web app.
