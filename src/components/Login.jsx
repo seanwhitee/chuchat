@@ -34,7 +34,7 @@ const Login = () => {
             ></Image>
           </div>
         </Tilt>
-      </div>
+      </div>      
     </>
   );
 };

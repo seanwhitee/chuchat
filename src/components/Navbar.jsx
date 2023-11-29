@@ -29,7 +29,7 @@ export default function Navbar() {
         {/**take the user to chatroom home page */}
         <button
           onClick={() => signIn("google")}
-          className=" text-white font-semibold text-sm border-1 rounded-md animate-pulse bg-purple-500 hover:bg-purple-500/30 px-3 py-2"
+          className=" text-white font-semibold text-sm border-1 rounded-md  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90 px-3 py-2"
         >
           Getting start
         </button>
