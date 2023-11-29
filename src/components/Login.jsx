@@ -24,7 +24,7 @@ const Login = () => {
           </div>
         </div>
         <Tilt>
-          <div className=" lg:w-[550px] md:w-[550px] w-[330px]">
+          <div className="p-1 shadow-lg bg-gray-500/20 lg:w-[550px] md:w-[550px] w-[330px]">
             <Image
               src={"/assets/images/demo1.png"}
               width={550}
