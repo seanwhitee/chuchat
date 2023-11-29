@@ -10,14 +10,23 @@ import { query, orderBy, collection } from "firebase/firestore";
 const Chat = ({ chatId }) => {
   const { data: session } = useSession();
   const [messages, loading, error] = useCollection(
-    session && query(
-      collection(db, "users", session?.user?.email, "chats", chatId, 'messages'),
-      orderBy('createAt', 'asc'))
+    session &&
+      query(
+        collection(
+          db,
+          "users",
+          session?.user?.email,
+          "chats",
+          chatId,
+          "messages"
+        ),
+        orderBy("createAt", "asc")
+      )
   );
 
   return (
     <div
-      className="mx-auto break-words h-full overflow-scroll flex flex-col lg:w-[50rem] md:w-[25rem] w-[25rem]
+      className="lg:pb-20 md:pb-20 pb-20 mx-auto break-words overflow-scroll flex flex-col lg:w-[60rem] md:w-[50rem] w-[30rem]
           bg-white px-3 items-center justify-start py-5"
     >
       {messages?.docs.map((mess) => {

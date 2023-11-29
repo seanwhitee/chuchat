@@ -13,13 +13,13 @@ const Page = async ({ params }) => {
     redirect('/')
   }
   return (
-    <div className="flex flex-col h-full bg-white">
-      <div className=" flex h-full items-center">
-        <div className="flex pb-24 flex-col w-full justify-between h-screen">
+    <div className="flex  flex-col bg-white">
+      <div className=" flex justify-center">
+        <div className="flex flex-col justify-between">
           <Chat chatId={params.roomId} />
 
           {/**user promting */}
-          <div className=" fixed bottom-0 py-5 items-center justify-center flex w-full">
+          <div className=" fixed bottom-0 left-0 py-5 items-center justify-center flex w-full">
             <UserInputArea chatId={params.roomId} />
           </div>
 

@@ -43,8 +43,8 @@ export default async function Home() {
       {!session && <Login />}
       {session && (
         <>
-          <div className="flex flex-col h-full bg-white">
-            <div className="flex h-full items-center">
+          <div className="flex flex-col bg-white">
+            <div className="flex h-screen items-center">
               <div className="mx-auto flex flex-col items-center justify-center">
                 <div className="bg-white lg:flex">
                   {cardData.map((data) => {

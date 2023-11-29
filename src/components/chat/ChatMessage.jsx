@@ -10,7 +10,7 @@ const ChatMessage = ({ message }) => {
     message?.user.name === "Bard" ||
     message?.user.name === "Bing" ? (
     // The bot output
-    <div className="flex py-6 w-8/12 px-3">
+    <div className="flex py-6 w-10/12 px-3">
       <div className="me-2 flex justify-center items-start w-1/12">
         <Image
           src={message.user.avatar}
@@ -22,7 +22,7 @@ const ChatMessage = ({ message }) => {
 
       <div className="border-2 rounded-lg border-white/50 p-5 w-10/12 font-light text-black">
         <Markdown
-          className="flex flex-col overflow-scroll text-sm"
+          className="flex flex-col overflow-scroll lg:text-sm md:text-sm text-xs"
           remarkPlugins={[remarkGfm]}
         >
           {message.text}
@@ -31,10 +31,9 @@ const ChatMessage = ({ message }) => {
     </div>
   ) : (
     // The user output
-    <div className="flex py-6 w-8/12 text-white px-3">
+    <div className="flex py-6 w-10/12 text-white px-3">
       <div className=" me-2 flex justify-center items-start w-1/12">
         <Image
-          
           src={message.user.avatar}
           alt="user-avatar"
           width={45}
@@ -43,7 +42,12 @@ const ChatMessage = ({ message }) => {
       </div>
 
       <div className=" border-2 rounded-lg border-white/50 p-5 w-10/12 font-light text-black">
-        <Markdown className="flex text-sm flex-col overflow-scroll" remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
+        <Markdown
+          className="flex lg:text-sm md:text-sm text-xs flex-col overflow-scroll"
+          remarkPlugins={[remarkGfm]}
+        >
+          {message.text}
+        </Markdown>
       </div>
     </div>
   );

@@ -84,7 +84,6 @@ const UserInputArea = ({ chatId }) => {
         });
       });
 
-
       // // calling unformal bing chat api
       // const bingChatNotification = toast.loading("Bing is thinking...");
 
@@ -112,7 +111,7 @@ const UserInputArea = ({ chatId }) => {
   };
 
   return (
-    <div className="bg-white border-[1px] border-black/50 rounded-xl p-2 shadow-lg w-3/6">
+    <div className="bg-white border-[1px] border-black/50 rounded-xl p-2 shadow-lg w-4/6">
       <form action="" className="flex items-center px-2" onSubmit={sendMessage}>
         {/**dynamically update the textarea height based on the user input */}
         <textarea
@@ -126,7 +125,7 @@ const UserInputArea = ({ chatId }) => {
           rows={1}
           placeholder="Message ChuChat..."
           className="border-none outline-none resize-none bg-purple-white bg-gray-800
-            disabled:cursor-not-allowed bg-transparent disabled:text-gray-300 py-2 px-1 rounded-md w-full text-white me-3"
+            disabled:cursor-not-allowed bg-transparent disabled:text-gray-300 py-2 px-1 rounded-md w-full text-black me-3"
         ></textarea>
         <div className="">
           <button

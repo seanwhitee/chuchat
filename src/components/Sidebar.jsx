@@ -40,7 +40,7 @@ const Sidebar = () => {
       </button>
     </>
   ) : (
-    <div className=" px-3 w-64 bg-black p-1 text-white flex flex-col h-full justify-between fixed top-0 shadow-lg">
+    <div className=" px-3 w-64 bg-black p-1 text-white flex flex-col h-full justify-between fixed left-0 top-0 shadow-lg">
       <div className="flex">
         <NewChatCreateButton />
         <button

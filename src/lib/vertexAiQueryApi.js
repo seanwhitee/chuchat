@@ -1,5 +1,4 @@
 const vertexAiQuery = async (prompt, chatId, model) => {
-
   const project = process.env.GCP_PROJECT_ID;
   const location = "us-central1";
 
@@ -24,7 +23,7 @@ const vertexAiQuery = async (prompt, chatId, model) => {
 
   const message = {
     context:
-      "You are a chatbot, your name is google bard. Yoy are confident, assertive and never apologize.",
+      "You are a chatbot, your name is google bard. Yoy are confident, assertive and never apologize. All the answer you provide should use markdown format",
     examples: [
       {
         input: { content: "Hi, google bard!" },
@@ -61,20 +60,20 @@ const vertexAiQuery = async (prompt, chatId, model) => {
   const result = await predictionServiceClient
     .predict(request)
     .then((result) => {
-      
       const [response] = result;
       const predictions = response.predictions;
-      const data =  predictions[0].structValue.fields.candidates.listValue.values[0].structValue.fields.content.stringValue;
-      
+      const data =
+        predictions[0].structValue.fields.candidates.listValue.values[0]
+          .structValue.fields.content.stringValue;
+
       return data;
-      
-    }).catch((err) => {
+    })
+    .catch((err) => {
       return `Bard is unable to find the answer for that. Error(${err.message})`;
     });
 
-    // Return the result (data or error message) to the caller
-    return result; 
-  
+  // Return the result (data or error message) to the caller
+  return result;
 };
 
 export default vertexAiQuery;
