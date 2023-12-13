@@ -25,17 +25,17 @@ to provide a better solution for user reference.
 1. After clone the project, install all dependency.
 
     ```bash
-    npm i
+    npm install
     ```
 
 2.
     Create a .env.local file. Insind it, paste your google cloud oauth api secrets, openai api key or other secrets you needed. I list some secrets I used for this project as an example.
 
-    - next oauth url is 'http://localhost:3000' for local development mode. If you deploy to cloud, change to your own domain name.
+    - `NEXTAUTH_URL` is [http://localhost:3000](http://localhost:3000) for local development mode. If you deploy to cloud, change to your own domain name.
 
-    - GCP project ID is for calling vertex ai api.
+    - `GCP_PROJECT_ID` is for calling vertex ai api.
 
-    - Firebase service account key is for accessing the firebase from client side library.
+    - `FIREBASE_SERVICE_ACCOUNT_KEY` is for accessing the firebase using firebase admin.
 
     .env.local
 
