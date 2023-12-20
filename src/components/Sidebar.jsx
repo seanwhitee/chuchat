@@ -15,7 +15,7 @@ import { collection, orderBy, query } from "firebase/firestore";
 const Sidebar = () => {
   const { data: session } = useSession();
 
-  const [isClosed, setIsClosed] = useState(false);
+  const [isClosed, setIsClosed] = useState(true);
   const [isMenuOpened, setIsMenuOpened] = useState(false)
   const [chats, loading, error] = useCollection(
     session && query(
